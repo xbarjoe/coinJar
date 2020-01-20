@@ -38,9 +38,9 @@ public class Game {
 	public static void main(String args[]){
 		setup();
 		String[] options = {"Easy", "Normal", "Hard"};
-		int x = JOptionPane.showOptionDialog(null, "Choose your difficulty...", "Click a button",
+		int x = JOptionPane.showOptionDialog(null, "Choose your difficulty:", "Click a button",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[1]);
         Die d = new Die(x);
-        d.print();
+        System.out.println("Selected Difficulty: "+d.getDifficulty());
   }
 }
