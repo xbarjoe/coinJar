@@ -8,18 +8,18 @@ public class Player {
 		stash=12;
 	}
 	
-	public static void remove() {
+	public void remove() {
 		stash--;
 	}
 	
-	public static void add() {
+	public void add() {
 		stash++;
 	}
-	public static void add(int amnt) {
+	public void add(int amnt) {
 		stash+=amnt;
 	}
 	
-	public static int getStash() {
+	public int getStash() {
 		return stash;
 	}
 	
