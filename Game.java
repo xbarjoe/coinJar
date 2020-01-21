@@ -1,6 +1,8 @@
 package coinJar;
 import javax.swing.*;
 import java.awt.*;
+
+//Base GUI code taken from https://www.guru99.com/java-swing-gui.html
 public class Game {
 	public static void setup() {
 		 //Creating the Frame
@@ -34,13 +36,14 @@ public class Game {
         frame.getContentPane().add(BorderLayout.NORTH, mb);
         frame.getContentPane().add(BorderLayout.CENTER, ta);
         frame.setVisible(true);
-	}
-	public static void main(String args[]){
-		setup();
-		String[] options = {"Easy", "Normal", "Hard"};
+        String[] options = {"Easy", "Normal", "Hard"};
 		int x = JOptionPane.showOptionDialog(null, "Choose your difficulty:", "Click a button",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[1]);
         Die d = new Die(x);
         System.out.println("Selected Difficulty: "+d.getDifficulty());
+	}
+	public static void main(String args[]){
+		setup();
+		
   }
 }

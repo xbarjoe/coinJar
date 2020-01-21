@@ -58,7 +58,7 @@ public class Die {
 		return outcomes[num];
 
 	}
-	public static String getDifficulty() {
+	public String getDifficulty() {
 		return difficulty;
 	}
 
