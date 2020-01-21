@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URI;
 
 //Base GUI code taken from https://www.guru99.com/java-swing-gui.html
 public class Game {
@@ -24,17 +25,33 @@ public class Game {
 
 		// Creating the MenuBar and adding components
 		JMenuBar mb = new JMenuBar();
-		JMenu m1 = new JMenu("FILE");
-		JMenu m2 = new JMenu("Help");
+		JMenu m1 = new JMenu("File");
+		//JMenu m2 = new JMenu("Help");
+		
+		
 		mb.add(m1);
-		mb.add(m2);
+		//mb.add(m2);
 		JMenuItem m11 = new JMenuItem("New Game");
+		JMenuItem m33 = new JMenuItem("Help");
 		JMenuItem m22 = new JMenuItem("Exit");
 		m1.add(m11);
 		m11.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
+			}
+		});
+		m1.add(m33);
+		m33.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					  Desktop desktop = java.awt.Desktop.getDesktop();
+					  URI oURL = new URI("https://www.creativeescaperooms.com/blogs/how-to-articles/how-to-play-the-game-penny-drop");
+					  desktop.browse(oURL);
+					} catch (Exception ex) {
+					  ex.printStackTrace();
+					}
 			}
 		});
 		m1.add(m22);
@@ -45,7 +62,7 @@ public class Game {
 
 			}
 		});
-
+		
 		// Creating the panel at bottom and adding components
 		JPanel panel = new JPanel(); // the panel is not visible in output
 		JButton roll = new JButton("Roll");
