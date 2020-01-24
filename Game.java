@@ -73,7 +73,7 @@ public class Game {
 		JButton pass = new JButton("Pass");
 		panel.add(roll);
 		panel.add(pass);
-
+		
 		// Text Area at the Center
 		JLabel pc = new JLabel();
 		JLabel oc = new JLabel();
@@ -100,7 +100,7 @@ public class Game {
 		d.print();
 		Player p1 = new Player();
 		Player p2 = new Player();
-
+		b = new Board();
 		pc.setText("Player coins:" + p1.getStash());
 		oc.setText("Opponent coins:" + p2.getStash());
 		roll.addActionListener(new ActionListener() {
@@ -113,9 +113,7 @@ public class Game {
 					p1.remove();
 					pc.setText("Player coins:" + p1.getStash());
 					System.out.println(dienum);
-					b.add(6);
-					p1.add();
-					
+					p1.add(b.add(dienum));
 					pc.setText("Player coins:" + p1.getStash());
 				}
 			}

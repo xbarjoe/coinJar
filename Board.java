@@ -8,7 +8,7 @@ public class Board {
 	}
 
 	public boolean isOccupied(int pos) {
-		return slots[pos];
+		return slots[pos-1];
 	}
 
 	public int add(int num) {
@@ -27,7 +27,7 @@ public class Board {
 
 	public int clear() {
 		int ret = this.numOccupied();
-		for (int i = 0; i <= 5; i++) {
+		for (int i = 0; i < 5; i++) {
 			slots[i] = false;
 		}
 		return ret;
