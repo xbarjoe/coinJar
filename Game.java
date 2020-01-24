@@ -115,6 +115,10 @@ public class Game {
 					System.out.println(dienum);
 					p1.add(b.add(dienum));
 					pc.setText("Player coins:" + p1.getStash());
+					if(p1.getStash()==0) {
+						JOptionPane.showMessageDialog(null,"You Win!", "Congradulations!", 0);
+						System.exit(0);
+					}
 				}
 			}
 		});

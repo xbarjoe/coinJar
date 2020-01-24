@@ -16,10 +16,10 @@ public class Board {
 		if (num == 6) {
 			return 0;
 		}
-		if (this.isOccupied(num)) {
+		else if (this.isOccupied(num)) {
 			return this.clear();
 		} else {
-			slots[num] = true;
+			slots[num-1] = true;
 			return 0;
 		}
 
@@ -35,7 +35,7 @@ public class Board {
 
 	public int numOccupied() {
 		int count = 0;
-		for (int i = 0; i <= 5; i++) {
+		for (int i = 0; i < 5; i++) {
 			if (slots[i] = true) {
 				count++;
 			}
